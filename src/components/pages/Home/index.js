@@ -1,8 +1,10 @@
-export default function Home(){
+import Layout from "../../common/Layout";
+import Songs from "./Songs";
 
-    return (
-        <div>
-            ana sayfa
-        </div>
-    )
+export default function Home() {
+  return (
+    <Layout>
+      <Songs />
+    </Layout>
+  );
 }

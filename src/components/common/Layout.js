@@ -2,9 +2,9 @@ import Header from "./Header";
 
 export default function Layout({ children }) {
   return (
-    <div className="bg-gradient-to-b from-black/60 to-lime-600 min-h-[120vh] text-white">
+    <div className="bg-gradient-to-b from-black to-slate-700 min-h-[120vh] text-white">
       <Header />
-      {children}
+      <div className="max-w-[1500px] mx-auto mt-12">{children}</div>
     </div>
   );
 }
