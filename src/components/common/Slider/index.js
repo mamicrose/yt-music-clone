@@ -22,28 +22,29 @@ export default function Slider({ title }) {
   }, []);
 
   return (
-    <div className="w-full p-4">
+    <div className="w-full p-4 mb-20">
       <div className="flex items-center justify-between mb-3">
-        <h3 className="font-bold text-5xl">{title}</h3>
+        <h3 className="font-bold text-4xl">{title}</h3>
 
-        <div className="flex items-center gap-3 m-3">
+        <div className="flex items-center gap-5 m-3">
           <button
             onClick={handlePrev}
             className="w-9 h-9 flex items-center justify-center rounded-full border border-white/50 hover:bg-white/20 transition-colors"
           >
-            <BsChevronLeft size={18} color="white" />
+            <BsChevronLeft size={15} color="white" />
           </button>
           <button
             onClick={handleNext}
             className="w-9 h-9 flex items-center justify-center rounded-full border border-white/50 hover:bg-white/20 transition-colors"
           >
-            <BsChevronRight size={18} color="white" />
+            <BsChevronRight size={15} color="white" />
           </button>
         </div>
       </div>
 
       <Swiper
-        slidesPerView={5}
+        slidesPerView={6}
+        spaceBetween={10}
         modules={[Pagination]}
         ref={sliderRef}
         className="mySwiper"

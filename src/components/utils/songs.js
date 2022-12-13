@@ -47,4 +47,12 @@ export const songs = [
     cover:
       "https://lh3.googleusercontent.com/BnF_9HW4TNNUuTHphV_QfG7TfY2QcPw9dCwwzkvIxrIwGi7fnTS-LqScSut3HmRikQEs5dAQL60fxQ=w226-h226-l90-rj",
   },
+  {
+    id: 6,
+    title: "Türkçe 2000'ler",
+    subTitle: "Hande Yener, Nil Karaibrahimgil, Tarkan, Yalın",
+    type: "song",
+    cover:
+      "https://lh3.googleusercontent.com/xC1av08jYJsjdT9EMyex8lRETcUUNO9Cw9f105iM7KNTXo7PPxlxfxwjorxqGCU_lUkpj7Cq-LoJhQY=w226-h226-l90-rj",
+  },
 ];
