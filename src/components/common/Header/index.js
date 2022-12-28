@@ -1,14 +1,23 @@
 import logo from "../img/logo.svg";
+import resp_logo from "../img/resp_logo.svg";
 import pp from "../img/pp.jpg";
 import { FaChromecast } from "react-icons/fa";
+import { HiOutlineHome } from "react-icons/hi";
+import { SlCompass } from "react-icons/sl";
+import { MdOutlineLibraryMusic } from "react-icons/md";
 import clsx from "clsx";
 import { useCallback, useEffect, useState } from "react";
 import MenuItem from "./MenuItem";
 import Search from "./Search";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 export default function Header() {
   const [scroll, setScroll] = useState("");
   const [showSearch, setShowSearch] = useState(false);
+
+  const [width] = useMediaQuery();
+
+  const isMobile = width >= 0 && width < 768 ? true : false;
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -34,17 +43,28 @@ export default function Header() {
           scroll && "bg-black top-0"
         )}
       >
-        <img src={logo} alt="logo" className="w-20 object-cover" />
+        {isMobile ? (
+          <img src={resp_logo} alt="logo" className="w-9 object-contain" />
+        ) : (
+          <img src={logo} alt="logo" className="w-20 object-contain" />
+        )}
 
         {showSearch ? (
           <Search onClose={handleShowSearch} />
         ) : (
-          <div className="flex items-center gap-10">
-            <MenuItem label="Ana Sayfa" active />
-            <MenuItem label="Keşfet" />
-            <MenuItem label="Kitaplık" />
-            <MenuItem label="Arayın" icon onPress={handleShowSearch} />
-          </div>
+          <>
+            <div className="items-center gap-10 hidden lg:flex">
+              <MenuItem label="Ana Sayfa" active />
+              <MenuItem label="Keşfet" />
+              <MenuItem label="Kitaplık" />
+              <MenuItem label="Arayın" icon onPress={handleShowSearch} />
+            </div>
+            <div className="items-center gap-6 flex lg:hidden text-gray-400">
+              <HiOutlineHome size={25} />
+              <SlCompass size={25} />
+              <MdOutlineLibraryMusic size={25} />
+            </div>
+          </>
         )}
 
         <div className="flex items-center gap-5">

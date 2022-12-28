@@ -58,14 +58,14 @@ export default function QuickSelect({ title }) {
     setPages(page);
   };
 
-  console.log(data);
-
   return (
     <div className="w-full p-4 mb-20">
       <div className="flex items-center justify-between mb-3">
         <div className="block space-y-2">
-          <h3 className="font-light text-md text-gray-400">{title}</h3>
-          <h3 className="font-bold text-5xl">Hızlı Seçimler</h3>
+          <h3 className="font-light text-sm lg:text-md text-gray-400">
+            {title}
+          </h3>
+          <h3 className="font-bold text-xl lg:text-5xl">Hızlı Seçimler</h3>
         </div>
 
         <div className="flex items-center gap-5 m-3">
@@ -100,7 +100,7 @@ export default function QuickSelect({ title }) {
       >
         {Array.from({ length: pages }).map((el, index) => (
           <SwiperSlide key={index}>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               {data.map((item) => (
                 <div
                   key={item.id}

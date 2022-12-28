@@ -7,9 +7,24 @@ import "./index.module.css";
 import { songs } from "../../utils/songs";
 import clsx from "clsx";
 import { useCallback, useRef } from "react";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 export default function Slider({ title }) {
   const sliderRef = useRef(null);
+  const [width] = useMediaQuery();
+
+  let perView = 6;
+  if (width >= 500 && width < 600) {
+    perView = 2;
+  } else if (width >= 600 && width < 992) {
+    perView = 3;
+  } else if (width >= 992 && width < 1200) {
+    perView = 4;
+  } else if (width >= 1200) {
+    perView = 6;
+  } else {
+    perView = 1;
+  }
 
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
@@ -24,7 +39,7 @@ export default function Slider({ title }) {
   return (
     <div className="w-full p-4 mb-20">
       <div className="flex items-center justify-between mb-3">
-        <h3 className="font-bold text-4xl">{title}</h3>
+        <h3 className="font-bold text-xl lg:text-4xl">{title}</h3>
 
         <div className="flex items-center gap-5 m-3">
           <button
@@ -43,7 +58,7 @@ export default function Slider({ title }) {
       </div>
 
       <Swiper
-        slidesPerView={6}
+        slidesPerView={perView}
         spaceBetween={10}
         modules={[Pagination]}
         ref={sliderRef}
@@ -59,7 +74,7 @@ export default function Slider({ title }) {
                 src={item.cover}
                 alt="cover"
                 className={clsx(
-                  "w-60 h-60 object-cover mb-3 cursor-pointer hover:opacity-50 transition-opacity",
+                  "w-full lg:w-60 h-60 object-contain mb-3 cursor-pointer hover:opacity-50 transition-opacity",
                   item.type === "profile" ? "rounded-full" : "rounded-md"
                 )}
               />
