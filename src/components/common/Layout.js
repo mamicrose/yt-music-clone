@@ -1,10 +1,13 @@
 import Header from "./Header";
+import Player from "./Player";
 
 export default function Layout({ children }) {
   return (
-    <div className="bg-gradient-to-b from-black to-slate-700 min-h-[120vh] text-white">
+    <div className="bg-gradient-to-b from-black to-gray-900 text-white">
       <Header />
       <div className="max-w-[1500px] mx-auto mt-8">{children}</div>
+
+      <Player />
     </div>
   );
 }

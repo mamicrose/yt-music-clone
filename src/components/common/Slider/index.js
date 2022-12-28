@@ -29,13 +29,13 @@ export default function Slider({ title }) {
         <div className="flex items-center gap-5 m-3">
           <button
             onClick={handlePrev}
-            className="w-9 h-9 flex items-center justify-center rounded-full border border-white/50 hover:bg-white/20 transition-colors"
+            className="w-9 h-9 flex-center rounded-full border border-white/50 hover:bg-white/20 transition-colors"
           >
             <BsChevronLeft size={15} color="white" />
           </button>
           <button
             onClick={handleNext}
-            className="w-9 h-9 flex items-center justify-center rounded-full border border-white/50 hover:bg-white/20 transition-colors"
+            className="w-9 h-9 flex-center rounded-full border border-white/50 hover:bg-white/20 transition-colors"
           >
             <BsChevronRight size={15} color="white" />
           </button>
@@ -52,11 +52,12 @@ export default function Slider({ title }) {
         {songs.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="relative">
-              <div className="absolute left-[40%] top-[40%] opacity-100">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-100">
                 <IoPlaySharp size={40} color="white" />
               </div>
               <img
                 src={item.cover}
+                alt="cover"
                 className={clsx(
                   "w-60 h-60 object-cover mb-3 cursor-pointer hover:opacity-50 transition-opacity",
                   item.type === "profile" ? "rounded-full" : "rounded-md"
