@@ -15,3 +15,8 @@
     @apply justify-center;
     @apply items-center;
 }
+.flex-between{
+    @apply flex;
+    @apply justify-between;
+    @apply items-center;
+}

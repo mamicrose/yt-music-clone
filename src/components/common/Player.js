@@ -9,7 +9,7 @@ export default function Player() {
   return (
     <div className="fixed bottom-0 w-full p-3 bg-background z-20">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-7">
+        <div className="flex items-center gap-2 lg:gap-7">
           <div>
             <MdSkipPrevious color="#fff" size={24} />
           </div>
@@ -19,14 +19,14 @@ export default function Player() {
           <div>
             <MdSkipNext color="#fff" size={24} />
           </div>
-          <div>
+          <div className="hidden lg:block">
             <span className="text-xs text-gray-400 -ml-3">1:37 / 7:45</span>
           </div>
         </div>
 
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <div className="relative">
+            <div className="relative hidden lg:block">
               <img
                 src="https://lh3.googleusercontent.com/YpcR7ERXem0lbeWF9H141Vxf1iCHch9ciEAQxWbXqzpL2inJDba2n9I2BldxBn6ERrny_dMawvhq_77F=w226-h226-l90-rj"
                 alt="cover"
@@ -37,14 +37,14 @@ export default function Player() {
               </div>
             </div>
 
-            <div className="block ml-4 truncate w-2/3">
+            <div className="block ml-4 truncate lg:w-2/3 w-1/3">
               <p className="cursor-pointer">deneme</p>
               <p className="text-gray-400 hover:underline cursor-pointer">
                 Zeynep Bastık, Uğur Etiler, Sıla Şahin, Sezer Sarıgöz
               </p>
             </div>
           </div>
-          <div className="gap-5 text-gray-500 flex items-center justify-center">
+          <div className="gap-5 text-gray-500 items-center justify-center hidden lg:flex">
             <div className="cursor-pointer hover:text-gray-300">
               <BiDislike size={23} />
             </div>
@@ -58,13 +58,13 @@ export default function Player() {
         </div>
 
         <div className="flex-center text-gray-500 gap-7">
-          <div>
+          <div className="hidden lg:block">
             <IoVolumeHighOutline size={24} />
           </div>
-          <div>
+          <div className="hidden lg:block">
             <RiRepeatLine size={24} />
           </div>
-          <div>
+          <div className="hidden lg:block">
             <BsShuffle size={24} />
           </div>
           <div>

@@ -2,11 +2,11 @@ import { memo } from "react";
 import clsx from "clsx";
 import { IoSearchOutline } from "react-icons/io5";
 
-const MenuItem = ({ label, active, icon, onPress }) => {
+const MenuItem = ({ label, active, icon, onClick }) => {
   return (
     <button
       type="button"
-      onClick={onPress}
+      onClick={onClick}
       className={clsx(
         "font-bold text-lg px-2 flex items-center gap-5 hover:text-white",
         active ? "text-white" : "text-white/50"

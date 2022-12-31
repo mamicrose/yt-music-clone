@@ -4,6 +4,7 @@ import pp from "../img/pp.jpg";
 import { FaChromecast } from "react-icons/fa";
 import { HiOutlineHome } from "react-icons/hi";
 import { SlCompass } from "react-icons/sl";
+import { IoSearchOutline } from "react-icons/io5";
 import { MdOutlineLibraryMusic } from "react-icons/md";
 import clsx from "clsx";
 import { useCallback, useEffect, useState } from "react";
@@ -57,12 +58,15 @@ export default function Header() {
               <MenuItem label="Ana Sayfa" active />
               <MenuItem label="Keşfet" />
               <MenuItem label="Kitaplık" />
-              <MenuItem label="Arayın" icon onPress={handleShowSearch} />
+              <MenuItem label="Arayın" icon onClick={handleShowSearch} />
             </div>
             <div className="items-center gap-6 flex lg:hidden text-gray-400">
               <HiOutlineHome size={25} />
               <SlCompass size={25} />
               <MdOutlineLibraryMusic size={25} />
+              <button type="button" onClick={handleShowSearch}>
+                <IoSearchOutline size={25} />
+              </button>
             </div>
           </>
         )}
