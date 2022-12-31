@@ -4,11 +4,22 @@ import { IoPlaySharp, IoVolumeHighOutline } from "react-icons/io5";
 import { BiDislike, BiDotsVerticalRounded, BiLike } from "react-icons/bi";
 import { BsShuffle } from "react-icons/bs";
 import { GoTriangleUp } from "react-icons/go";
+import CustomRange from "./CustomRange";
+import { useState } from "react";
 
 export default function Player() {
+  const [value, setValue] = useState(0);
+
   return (
-    <div className="fixed bottom-0 w-full p-3 bg-background z-20">
-      <div className="flex items-center justify-between">
+    <div className="fixed bottom-0 w-full bg-background z-20">
+      <CustomRange
+        value={value}
+        step={0.1}
+        min={0}
+        max={100}
+        onChange={setValue}
+      />
+      <div className="flex items-center justify-between p-3">
         <div className="flex items-center gap-2 lg:gap-7">
           <div>
             <MdSkipPrevious color="#fff" size={24} />

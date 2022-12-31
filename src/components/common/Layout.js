@@ -1,5 +1,5 @@
 import Header from "./Header";
-import Player from "./Player";
+import Index from "./Player";
 
 export default function Layout({ children }) {
   return (
@@ -7,7 +7,7 @@ export default function Layout({ children }) {
       <Header />
       <div className="max-w-[1500px] mx-auto mt-8">{children}</div>
 
-      <Player />
+      <Index />
     </div>
   );
 }
